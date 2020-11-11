@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .m-pointer-cursor {
+            cursor: pointer;
+        }
+
+        .modal-coustom {
+            width: 400px;
+            height: 80%;
+            margin-left: 50px;
+            /* border-radius: 5px !important; */
+        }
+
+        .btn:focus,
+        .btn:active {
+            outline: none !important;
+            box-shadow: none;
+        }
+
+        .m-custom-size {
+            width: 450px;
+            height: 400px;
+
+        }
+
+        .m-radius-5 {
+            border-radius: 15px !important;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <header>
+        <nav>
+            <div class="container-big__head">
+                <div class="container-head">
+                    <div class="header1 "><img src="image/instagramlogo.png" width="100px" /></div>
+                    <div class="header2 ml-5">
+                        <?xml version="1.0" encoding="iso-8859-1"?>
+                        <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                        <!DOCTYPE svg
+                            PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+                        <svg version="1.1" class="mr-2" style="width: 20px; height:20px;" id="Capa_1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                            y="0px" width="612.08px" height="612.08px" viewBox="0 0 612.08 612.08"
+                            style="enable-background:new 0 0 612.08 612.08;" xml:space="preserve">
+                            <g>
+                                <path d="M237.927,0C106.555,0,0.035,106.52,0.035,237.893c0,131.373,106.52,237.893,237.893,237.893
+    c50.518,0,97.368-15.757,135.879-42.597l0.028-0.028l176.432,176.433c3.274,3.274,8.48,3.358,11.839,0l47.551-47.551
+    c3.274-3.274,3.106-8.703-0.028-11.838L433.223,373.8c26.84-38.539,42.597-85.39,42.597-135.907C475.82,106.52,369.3,0,237.927,0z
+     M237.927,419.811c-100.475,0-181.918-81.443-181.918-181.918S137.453,55.975,237.927,55.975s181.918,81.443,181.918,181.918
+    S338.402,419.811,237.927,419.811z" />
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                        </svg>
+
+                        <input type="text" autofocus placeholder="검색" class="header1-input">
+                    </div>
+                    <div class="header3 ">
+
+                        <div class="nav__icon">
+                            <a class="nav-link" href="instagram__main.html" style="color: black;">
+                                <svg aria-label="홈" class="_8-yf5 " fill="#262626" height="22" viewBox="0 0 48 48"
+                                    width="22">
+                                    <path
+                                        d="M45.5 48H30.1c-.8 0-1.5-.7-1.5-1.5V34.2c0-2.6-2.1-4.6-4.6-4.6s-4.6 2.1-4.6 4.6v12.3c0 .8-.7 1.5-1.5 1.5H2.5c-.8 0-1.5-.7-1.5-1.5V23c0-.4.2-.8.4-1.1L22.9.4c.6-.6 1.6-.6 2.1 0l21.5 21.5c.3.3.4.7.4 1.1v23.5c.1.8-.6 1.5-1.4 1.5z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="nav__icon">
+                            <svg aria-label="Direct" class="_8-yf5 " fill="#262626" height="22" viewBox="0 0 48 48"
+                                width="22">
+                                <path
+                                    d="M47.8 3.8c-.3-.5-.8-.8-1.3-.8h-45C.9 3.1.3 3.5.1 4S0 5.2.4 5.7l15.9 15.6 5.5 22.6c.1.6.6 1 1.2 1.1h.2c.5 0 1-.3 1.3-.7l23.2-39c.4-.4.4-1 .1-1.5zM5.2 6.1h35.5L18 18.7 5.2 6.1zm18.7 33.6l-4.4-18.4L42.4 8.6 23.9 39.7z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="nav__icon">
+                            <a class="nav-link" href="prototype_INSTA.html" style="color: black;">
+                                <svg aria-label="사람 찾기" class="_8-yf5 " fill="#262626" height="22" viewBox="0 0 48 48"
+                                    width="22">
+                                    <path clip-rule="evenodd"
+                                        d="M24 0C10.8 0 0 10.8 0 24s10.8 24 24 24 24-10.8 24-24S37.2 0 24 0zm0 45C12.4 45 3 35.6 3 24S12.4 3 24 3s21 9.4 21 21-9.4 21-21 21zm10.2-33.2l-14.8 7c-.3.1-.6.4-.7.7l-7 14.8c-.3.6-.2 1.3.3 1.7.3.3.7.4 1.1.4.2 0 .4 0 .6-.1l14.8-7c.3-.1.6-.4.7-.7l7-14.8c.3-.6.2-1.3-.3-1.7-.4-.5-1.1-.6-1.7-.3zm-7.4 15l-5.5-5.5 10.5-5-5 10.5z"
+                                        fill-rule="evenodd"></path>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="nav__icon">
+                            <div id="nav--heart" class="nav-heart">
+                                <svg aria-label="활동 피드" class="_8-yf5 " fill="#262626" height="22" viewBox="0 0 48 48"
+                                    width="22">
+                                    <path
+                                        d="M34.6 6.1c5.7 0 10.4 5.2 10.4 11.5 0 6.8-5.9 11-11.5 16S25 41.3 24 41.9c-1.1-.7-4.7-4-9.5-8.3-5.7-5-11.5-9.2-11.5-16C3 11.3 7.7 6.1 13.4 6.1c4.2 0 6.5 2 8.1 4.3 1.9 2.6 2.2 3.9 2.5 3.9.3 0 .6-1.3 2.5-3.9 1.6-2.3 3.9-4.3 8.1-4.3m0-3c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5.6 0 1.1-.2 1.6-.5 1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z">
+                                    </path>
+                                </svg>
+                                <div id="heart__box" class="nav-heart__box">
+                                    <div class="heart-box__list">
+                                        <div class="heart-box__img">
+                                            <img src="image/profile.jpg" width="50px" height="50px" />
+                                        </div>
+                                        <div class="heart-box__text">
+                                            <div class="text__list">
+                                                <div class="text__id">girl_6_20</div>
+                                                <div class="text__info">님이 회원님을 팔로우하기 시작했습니다</div>
+                                            </div>
+                                            <div class="text__follow">
+                                                <button class="btn_follow">팔로잉</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="heart-box__list">
+                                        <div class="heart-box__img">
+                                            <img src="image/profile.jpg" width="50px" height="50px" />
+                                        </div>
+                                        <div class="heart-box__text">
+                                            <div class="text__list">
+                                                <div class="text__id">girl_6_20</div>
+                                                <div class="text__info">님이 회원님을 팔로우하기 시작했습니다</div>
+                                            </div>
+                                            <div class="text__follow">
+                                                <button class="btn_follow">팔로잉</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="heart-box__list">
+                                        <div class="heart-box__img">
+                                            <img src="image/profile.jpg" width="50px" height="50px" />
+                                        </div>
+                                        <div class="heart-box__text">
+                                            <div class="text__list">
+                                                <div class="text__id">girl_6_20</div>
+                                                <div class="text__info">님이 회원님을 팔로우하기 시작했습니다</div>
+                                            </div>
+                                            <div class="text__follow">
+                                                <button class="btn_follow">팔로잉</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="heart-box__list">
+                                        <div class="heart-box__img">
+                                            <img src="image/profile.jpg" width="50px" height="50px" />
+                                        </div>
+                                        <div class="heart-box__text">
+                                            <div class="text__list">
+                                                <div class="text__id">girl_6_20</div>
+                                                <div class="text__info">님이 회원님을 팔로우하기 시작했습니다</div>
+                                            </div>
+                                            <div class="text__follow">
+                                                <button class="btn_follow">팔로잉</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="heart-box__list">
+                                        <div class="heart-box__img">
+                                            <img src="image/profile.jpg" width="50px" height="50px" />
+                                        </div>
+                                        <div class="heart-box__text">
+                                            <div class="text__list">
+                                                <div class="text__id">girl_6_20</div>
+                                                <div class="text__info">님이 회원님을 팔로우하기 시작했습니다</div>
+                                            </div>
+                                            <div class="text__follow">
+                                                <button class="btn_follow">팔로잉</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="heart-box__list">
+                                        <div class="heart-box__img">
+                                            <img src="image/profile.jpg" width="50px" height="50px" />
+                                        </div>
+                                        <div class="heart-box__text">
+                                            <div class="text__list">
+                                                <div class="text__id">girl_6_20</div>
+                                                <div class="text__info">님이 회원님을 팔로우하기 시작했습니다</div>
+                                            </div>
+                                            <div class="text__follow">
+                                                <button class="btn_follow">팔로잉</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nav__icon">
+                            <div id="nav--profile" class="nav__profile rounded-circle border mt-1 ml-1"
+                                style="height:30px; width:30px;">
+                                <div id="nav--profile__box" class="nav--box__profile">
+                                    <div class="profile--list">
+
+                                        <div><a class="nav-link" href="prototype_profile.html" style="color: black;">
+                                                <svg aria-label="프로필" class="mr-2 " fill="#262626" height="16"
+                                                    viewBox="0 0 32 32" width="16">
+                                                    <path
+                                                        d="M16 0C7.2 0 0 7.1 0 16c0 4.8 2.1 9.1 5.5 12l.3.3C8.5 30.6 12.1 32 16 32s7.5-1.4 10.2-3.7l.3-.3c3.4-3 5.5-7.2 5.5-12 0-8.9-7.2-16-16-16zm0 29c-2.8 0-5.3-.9-7.5-2.4.5-.9.9-1.3 1.4-1.8.7-.5 1.5-.8 2.4-.8h7.2c.9 0 1.7.3 2.4.8.5.4.9.8 1.4 1.8-2 1.5-4.5 2.4-7.3 2.4zm9.7-4.4c-.5-.9-1.1-1.5-1.9-2.1-1.2-.9-2.7-1.4-4.2-1.4h-7.2c-1.5 0-3 .5-4.2 1.4-.8.6-1.4 1.2-1.9 2.1C4.2 22.3 3 19.3 3 16 3 8.8 8.8 3 16 3s13 5.8 13 13c0 3.3-1.2 6.3-3.3 8.6zM16 5.7c-3.9 0-7 3.1-7 7s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 11c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z">
+                                                    </path>
+                                                </svg>
+                                                프로필</a></div>
+
+                                    </div>
+                                    <div class="profile--list">
+                                        <a class="nav-link" href="#" style="color: black;">
+                                            <div><svg aria-label="저장됨" class="mr-2 " fill="#262626" height="16"
+                                                    viewBox="0 0 32 32" width="16">
+                                                    <path
+                                                        d="M28.7 32c-.4 0-.8-.2-1.1-.4L16 19.9 4.4 31.6c-.4.4-1.1.6-1.6.3-.6-.2-.9-.8-.9-1.4v-29C1.8.7 2.5 0 3.3 0h25.4c.8 0 1.5.7 1.5 1.5v29c0 .6-.4 1.2-.9 1.4-.2.1-.4.1-.6.1zM4.8 3v23.9l9.4-9.4c.9-.9 2.6-.9 3.5 0l9.4 9.4V3H4.8z">
+                                                    </path>
+                                                </svg> 저장됨</div>
+                                        </a>
+                                    </div>
+                                    <div class="profile--list">
+                                        <a class="nav-link" href="join.html" style="color: black;">
+                                            <div><svg aria-label="설정" class="mr-2 " fill="#262626" height="16"
+                                                    viewBox="0 0 32 32" width="16">
+                                                    <path
+                                                        d="M31.2 13.4l-1.4-.7c-.1 0-.2-.1-.2-.2v-.2c-.3-1.1-.7-2.1-1.3-3.1v-.1l-.2-.1v-.3l.5-1.5c.2-.5 0-1.1-.4-1.5l-1.9-1.9c-.4-.4-1-.5-1.5-.4l-1.5.5H23l-.1-.1h-.1c-1-.5-2-1-3.1-1.3h-.2c-.1 0-.1-.1-.2-.2L18.6.9c-.2-.5-.7-.9-1.2-.9h-2.7c-.5 0-1 .3-1.3.8l-.7 1.4c0 .1-.1.2-.2.2h-.2c-1.1.3-2.1.7-3.1 1.3h-.1l-.1.2h-.3l-1.5-.5c-.5-.2-1.1 0-1.5.4L3.8 5.7c-.4.4-.5 1-.4 1.5l.5 1.5v.5c-.5 1-1 2-1.3 3.1v.2c0 .1-.1.1-.2.2l-1.4.7c-.6.2-1 .7-1 1.2v2.7c0 .5.3 1 .8 1.3l1.4.7c.1 0 .2.1.2.2v.2c.3 1.1.7 2.1 1.3 3.1v.1l.2.1v.3l-.5 1.5c-.2.5 0 1.1.4 1.5l1.9 1.9c.3.3.6.4 1 .4.2 0 .3 0 .5-.1l1.5-.5H9l.1.1h.1c1 .5 2 1 3.1 1.3h.2c.1 0 .1.1.2.2l.7 1.4c.2.5.7.8 1.3.8h2.7c.5 0 1-.3 1.3-.8l.7-1.4c0-.1.1-.2.2-.2h.2c1.1-.3 2.1-.7 3.1-1.3h.1l.1-.1h.3l1.5.5c.1 0 .3.1.5.1.4 0 .7-.1 1-.4l1.9-1.9c.4-.4.5-1 .4-1.5l-.5-1.5V23l.1-.1v-.1c.5-1 1-2 1.3-3.1v-.2c0-.1.1-.1.2-.2l1.4-.7c.5-.2.8-.7.8-1.3v-2.7c0-.5-.4-1-.8-1.2zM16 27.1c-6.1 0-11.1-5-11.1-11.1S9.9 4.9 16 4.9s11.1 5 11.1 11.1-5 11.1-11.1 11.1z">
+                                                    </path>
+                                                </svg> 설정</div>
+                                        </a>
+                                    </div>
+                                    <div class="profile--list">
+                                        <a class="nav-link" href="join.html" style="color: black;">
+                                            <div><svg aria-label="계정 전환" class="mr-2 " fill="#262626" height="16"
+                                                    viewBox="0 0 32 32" width="16">
+                                                    <path
+                                                        d="M10.3 10.7c0-.8-.7-1.5-1.5-1.5H4.9C7.2 5.4 11.4 3 16 3c3.6 0 7 1.5 9.5 4.1.5.6 1.5.6 2.1.1.6-.6.6-1.5.1-2.1-3-3.2-7.3-5-11.7-5C10.7 0 6 2.5 3 6.7V3.5C3 2.7 2.3 2 1.5 2S0 2.7 0 3.5v7.2c0 .8.7 1.5 1.5 1.5h7.3c.8 0 1.5-.6 1.5-1.5zm20.2 9.1h-7.2c-.8 0-1.5.7-1.5 1.5s.7 1.5 1.5 1.5h3.8C24.8 26.6 20.6 29 16 29c-3.6 0-7-1.5-9.5-4.1-.5-.6-1.5-.6-2.1-.1-.6.6-.6 1.5-.1 2.1 3 3.2 7.3 5 11.7 5 5.3 0 10-2.5 13-6.7v3.2c0 .8.7 1.5 1.5 1.5s1.5-.7 1.5-1.5v-7.2c0-.8-.7-1.4-1.5-1.4z">
+                                                    </path>
+                                                </svg> 계정전환</div>
+                                        </a>
+                                    </div>
+                                    <div class="profile--logout">
+                                        로그아웃
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="header__size"></div>
+            </div>
+        </nav>
+    </header>
+
+
+
+
+
+
+    <!-- 메인 부분!! -->
+    <div class="main-box">
+        <div class="d-flex mt-5 px-5">
+            <div>
+                <div>
+                    <img src="img/tour.jpg" class="rounded-circle" width="150" height="150">
+                </div>
+            </div>
+            <div class="px-5 ml-5 mt-2">
+                <div class="d-flex">
+                    <h3 class="font-weight-light">kkk2014</h3>
+                    <div class="ml-sm-4">
+                        <a class="nav-link" href="profile__edit.html" style="color: black;">
+                            <button type="button" class="btn rounded border text-dark btn-sm  font-weight-bold">프로필
+                                편집</button></a>
+                    </div>
+                    <div class="ml-sm-3">
+                        <svg aria-label="옵션" class="m-pointer-cursor" data-toggle="modal" data-target="#myModal"
+                            fill="#262626" height="24" viewBox="0 0 48 48" width="24">
+                            <path clip-rule="evenodd"
+                                d="M46.7 20.6l-2.1-1.1c-.4-.2-.7-.5-.8-1-.5-1.6-1.1-3.2-1.9-4.7-.2-.4-.3-.8-.1-1.2l.8-2.3c.2-.5 0-1.1-.4-1.5l-2.9-2.9c-.4-.4-1-.5-1.5-.4l-2.3.8c-.4.1-.8.1-1.2-.1-1.4-.8-3-1.5-4.6-1.9-.4-.1-.8-.4-1-.8l-1.1-2.2c-.3-.5-.8-.8-1.3-.8h-4.1c-.6 0-1.1.3-1.3.8l-1.1 2.2c-.2.4-.5.7-1 .8-1.6.5-3.2 1.1-4.6 1.9-.4.2-.8.3-1.2.1l-2.3-.8c-.5-.2-1.1 0-1.5.4L5.9 8.8c-.4.4-.5 1-.4 1.5l.8 2.3c.1.4.1.8-.1 1.2-.8 1.5-1.5 3-1.9 4.7-.1.4-.4.8-.8 1l-2.1 1.1c-.5.3-.8.8-.8 1.3V26c0 .6.3 1.1.8 1.3l2.1 1.1c.4.2.7.5.8 1 .5 1.6 1.1 3.2 1.9 4.7.2.4.3.8.1 1.2l-.8 2.3c-.2.5 0 1.1.4 1.5L8.8 42c.4.4 1 .5 1.5.4l2.3-.8c.4-.1.8-.1 1.2.1 1.4.8 3 1.5 4.6 1.9.4.1.8.4 1 .8l1.1 2.2c.3.5.8.8 1.3.8h4.1c.6 0 1.1-.3 1.3-.8l1.1-2.2c.2-.4.5-.7 1-.8 1.6-.5 3.2-1.1 4.6-1.9.4-.2.8-.3 1.2-.1l2.3.8c.5.2 1.1 0 1.5-.4l2.9-2.9c.4-.4.5-1 .4-1.5l-.8-2.3c-.1-.4-.1-.8.1-1.2.8-1.5 1.5-3 1.9-4.7.1-.4.4-.8.8-1l2.1-1.1c.5-.3.8-.8.8-1.3v-4.1c.4-.5.1-1.1-.4-1.3zM24 41.5c-9.7 0-17.5-7.8-17.5-17.5S14.3 6.5 24 6.5 41.5 14.3 41.5 24 33.7 41.5 24 41.5z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <ul class="list-unstyled d-flex list-group-horizontal justify-content-start list-inline">
+                        <li>
+                            <a>게시물 3</a>
+                        </li>
+                        <li class="ml-5 m-pointer-cursor " data-toggle="modal" data-target="#myModal2">
+                            <a>팔로워 1</a>
+                        </li>
+                        <li class="ml-5 m-pointer-cursor" data-toggle="modal" data-target="#myModal3">
+                            <a>팔로우 3</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="font-weight-bold">홍길동</div>
+                    <div>테스트</div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="mt-5" />
+
+        <div class="d-flex align-items-center justify-content-center align-middle flex-wrap ">
+            <a class="mx-5 text-decoration-none ">
+                <span class="m-pointer-cursor mx-1 "><svg aria-label="게시물" class="_8-yf5 " fill="#262626" height="12"
+                        viewBox="0 0 48 48" width="12">
+                        <path
+                            d="M45 1.5H3c-.8 0-1.5.7-1.5 1.5v42c0 .8.7 1.5 1.5 1.5h42c.8 0 1.5-.7 1.5-1.5V3c0-.8-.7-1.5-1.5-1.5zm-40.5 3h11v11h-11v-11zm0 14h11v11h-11v-11zm11 25h-11v-11h11v11zm14 0h-11v-11h11v11zm0-14h-11v-11h11v11zm0-14h-11v-11h11v11zm14 28h-11v-11h11v11zm0-14h-11v-11h11v11zm0-14h-11v-11h11v11z">
+                        </path>
+                    </svg><span class="m-pointer-cursor mx-1 text-secondary font-weight-bold small">게시물</span></span>
+            </a>
+
+            <a class="mx-5 text-decoration-none ">
+                <span class="m-pointer-cursor mx-1"><svg aria-label="게시물" fill="#8e8e8e" height="12" viewBox="0 0 48 48"
+                        width="12">
+                        <path
+                            d="M41 10c-2.2-2.1-4.8-3.5-10.4-3.5h-3.3L30.5 3c.6-.6.5-1.6-.1-2.1-.6-.6-1.6-.5-2.1.1L24 5.6 19.7 1c-.6-.6-1.5-.6-2.1-.1-.6.6-.7 1.5-.1 2.1l3.2 3.5h-3.3C11.8 6.5 9.2 7.9 7 10c-2.1 2.2-3.5 4.8-3.5 10.4v13.1c0 5.7 1.4 8.3 3.5 10.5 2.2 2.1 4.8 3.5 10.4 3.5h13.1c5.7 0 8.3-1.4 10.5-3.5 2.1-2.2 3.5-4.8 3.5-10.4V20.5c0-5.7-1.4-8.3-3.5-10.5zm.5 23.6c0 5.2-1.3 7-2.6 8.3-1.4 1.3-3.2 2.6-8.4 2.6H17.4c-5.2 0-7-1.3-8.3-2.6-1.3-1.4-2.6-3.2-2.6-8.4v-13c0-5.2 1.3-7 2.6-8.3 1.4-1.3 3.2-2.6 8.4-2.6h13.1c5.2 0 7 1.3 8.3 2.6 1.3 1.4 2.6 3.2 2.6 8.4v13zM34.6 25l-9.1 2.8v-3.7c0-.5-.2-.9-.6-1.2-.4-.3-.9-.4-1.3-.2l-11.1 3.4c-.8.2-1.2 1.1-1 1.9.2.8 1.1 1.2 1.9 1l9.1-2.8v3.7c0 .5.2.9.6 1.2.3.2.6.3.9.3.1 0 .3 0 .4-.1l11.1-3.4c.8-.2 1.2-1.1 1-1.9s-1.1-1.2-1.9-1z">
+                        </path>
+                    </svg><span class="m-pointer-cursor mx-1 text-secondary font-weight-bold small">IGTV</span></span>
+            </a>
+
+            <a class="mx-5 text-decoration-none ">
+                <svg aria-label="저장됨" class="m-pointer-cursor mx-1 " fill="#8e8e8e" height="12" viewBox="0 0 48 48"
+                    width="12">
+                    <path
+                        d="M43.5 48c-.4 0-.8-.2-1.1-.4L24 29 5.6 47.6c-.4.4-1.1.6-1.6.3-.6-.2-1-.8-1-1.4v-45C3 .7 3.7 0 4.5 0h39c.8 0 1.5.7 1.5 1.5v45c0 .6-.4 1.2-.9 1.4-.2.1-.4.1-.6.1zM24 26c.8 0 1.6.3 2.2.9l15.8 16V3H6v39.9l15.8-16c.6-.6 1.4-.9 2.2-.9z">
+                    </path>
+                </svg><span class="m-pointer-cursor mx-1 text-secondary font-weight-bold small">저장됨</span></span>
+            </a>
+
+            <a class="mx-5 text-decoration-none ">
+                <span class="m-pointer-cursor"><svg aria-label="태그됨" class="_8-yf5 " fill="#8e8e8e" height="12"
+                        viewBox="0 0 48 48" width="12">
+                        <path
+                            d="M41.5 5.5H30.4c-.5 0-1-.2-1.4-.6l-4-4c-.6-.6-1.5-.6-2.1 0l-4 4c-.4.4-.9.6-1.4.6h-11c-3.3 0-6 2.7-6 6v30c0 3.3 2.7 6 6 6h35c3.3 0 6-2.7 6-6v-30c0-3.3-2.7-6-6-6zm-29.4 39c-.6 0-1.1-.6-1-1.2.7-3.2 3.5-5.6 6.8-5.6h12c3.4 0 6.2 2.4 6.8 5.6.1.6-.4 1.2-1 1.2H12.1zm32.4-3c0 1.7-1.3 3-3 3h-.6c-.5 0-.9-.4-1-.9-.6-5-4.8-8.9-9.9-8.9H18c-5.1 0-9.4 3.9-9.9 8.9-.1.5-.5.9-1 .9h-.6c-1.7 0-3-1.3-3-3v-30c0-1.7 1.3-3 3-3h11.1c1.3 0 2.6-.5 3.5-1.5L24 4.1 26.9 7c.9.9 2.2 1.5 3.5 1.5h11.1c1.7 0 3 1.3 3 3v30zM24 12.5c-5.3 0-9.6 4.3-9.6 9.6s4.3 9.6 9.6 9.6 9.6-4.3 9.6-9.6-4.3-9.6-9.6-9.6zm0 16.1c-3.6 0-6.6-2.9-6.6-6.6 0-3.6 2.9-6.6 6.6-6.6s6.6 2.9 6.6 6.6c0 3.6-3 6.6-6.6 6.6z">
+                        </path>
+                    </svg><span class="m-pointer-cursor mx-1 text-secondary font-weight-bold small ">태그됨</span></span>
+            </a>
+        </div>
+
+
+
+
+        <!-- 게시글 사진들 -->
+
+        <div class="grid-container2 mt-3">
+            <div class="item"
+                style="background-image: url('img/10.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+                <div class="hidden-box bg-dark">
+                    <ul class="list-unstyled d-flex justify-content-center align-items-center w-100 h-100 ">
+                        <li class="m-li">
+                            <span class="d-block mx-3 text-white font-weight-bold">🤍 1,001</span>
+                            <span class="d-block mx-3 text-white font-weight-bold">🗨️ 12</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="item"
+                style="background-image: url('img/9.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+                <div class="hidden-box bg-dark">
+                    <ul class="list-unstyled d-flex justify-content-center align-items-center w-100 h-100 ">
+                        <li class="m-li">
+                            <span class="d-block mx-3 text-white font-weight-bold">🤍 30</span>
+                            <span class="d-block mx-3 text-white font-weight-bold">🗨️ 2</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="item"
+                style="background-image: url('img/8.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+                <div class="hidden-box bg-dark">
+                    <ul class="list-unstyled d-flex justify-content-center align-items-center w-100 h-100 ">
+                        <li class="m-li">
+                            <span class="d-block mx-3 text-white font-weight-bold">🤍 55.천</span>
+                            <span class="d-block mx-3 text-white font-weight-bold">🗨️ 122</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="item"
+                style="background-image: url('img/7.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+                <div class="hidden-box bg-dark">
+                    <ul class="list-unstyled d-flex justify-content-center align-items-center w-100 h-100 ">
+                        <li class="m-li">
+                            <span class="d-block mx-3 text-white font-weight-bold">🤍 1</span>
+                            <span class="d-block mx-3 text-white font-weight-bold">🗨️ 0</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="item"
+                style="background-image: url('img/6.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+                <div class="hidden-box bg-dark">
+                    <ul class="list-unstyled d-flex justify-content-center align-items-center w-100 h-100 ">
+                        <li class="m-li">
+                            <span class="d-block mx-3 text-white font-weight-bold">🤍 5</span>
+                            <span class="d-block mx-3 text-white font-weight-bold">🗨️ 12</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="item"
+                style="background-image: url('img/5.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+                <div class="hidden-box bg-dark">
+                    <ul class="list-unstyled d-flex justify-content-center align-items-center w-100 h-100 ">
+                        <li class="m-li">
+                            <span class="d-block mx-3 text-white font-weight-bold">🤍 3</span>
+                            <span class="d-block mx-3 text-white font-weight-bold">🗨️ 0</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- The setting Modal -->
+        <div class="modal fade " style="border-radius: 10px;" id="myModal">
+            <div class="modal-dialog modal-dialog-centered ">
+                <div class="modal-content modal-coustom m-radius-5 ">
+                    <div class="border modal-body text-center border border-top-0 border-left-0 border-right-0">비밀번호 변경
+                    </div>
+                    <div class="border modal-body text-center ">네임 태그</div>
+                    <div class="border modal-body text-center">앱 및 웹사이트</div>
+                    <div class="border modal-body text-center">알림</div>
+                    <div class="border modal-body text-center">공개 범위 및 보안</div>
+                    <div class="border modal-body text-center">로그인 활동</div>
+                    <div class="border modal-body text-center">Instagram에서 보낸 이메일</div>
+                    <div class="border modal-body text-center">문제 신고</div>
+                    <div class="border modal-body text-center">로그아웃</div>
+                    <div class="border modal-body text-center border-0">취소</div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- The Modal -->
+        <div class="modal " id="myModal2">
+            <div class="modal-dialog modal-dialog-centered ">
+                <div class="modal-content m-custom-size  m-radius-5">
+
+                    <!-- Modal Header -->
+                    <div class="d-flex justify-content-center align-items-center border border-top-0 border-left-0 border-right-0"
+                        style="height: 50px;">
+                        <div class="font-weight-bold text-center" style="width: 90%; font-size: 17px;">팔로워</div>
+                        <button class="close mb-2 btn-sm " data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="d-flex align-items-center" style="height: 50px;">
+                        <div class="border rounded-circle ml-2"
+                            style="width: 40px; height: 40px; background-image: url('img/tour.jpg'); "></div>
+                        <div class="ml-3">
+                            <div class="font-weight-bold">enzopoulat</div>
+                            <div class="text-secondary">ENZO POULAT</div>
+                        </div>
+                        <div class=" ml-auto">
+                            <button type="button" class="btn btn-primary btn-sm mr-3">팔로우</button>
+                        </div>
+                    </div>
+
+                    <div class="pl-3 pt-2" style="height: 35px;">
+                        <h6 class="font-weight-bold">회원님을 위한 추천</h6>
+                    </div>
+
+                    <!-- 시작 -->
+                    <div style="height: 300px; overflow: auto;">
+
+                        <div class="d-flex align-items-center mt-1" style="height: 65px;">
+                            <div class="border rounded-circle ml-2"
+                                style="width: 50px; height: 50px; background-image: url('img/tour.jpg'); "></div>
+                            <div class="ml-3">
+                                <div class="font-weight-bold" style="font-size: 14px;">enzopoulat</div>
+                                <div class="text-secondary">ENZO POULAT</div>
+                                <div class="text-secondary" style="font-size: 12px;">인기</div>
+                            </div>
+                            <div class=" ml-auto">
+                                <button type="button" class="btn btn-primary mr-3 btn-sm">팔로우</button>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mt-1" style="height: 65px;">
+                            <div class="border rounded-circle ml-2"
+                                style="width: 50px; height: 50px; background-image: url('img/tour.jpg'); "></div>
+                            <div class="ml-3">
+                                <div class="font-weight-bold" style="font-size: 14px;">enzopoulat</div>
+                                <div class="text-secondary">ENZO POULAT</div>
+                                <div class="text-secondary" style="font-size: 12px;">인기</div>
+                            </div>
+                            <div class=" ml-auto">
+                                <button type="button" class="btn btn-primary mr-3 btn-sm">팔로우</button>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mt-1" style="height: 65px;">
+                            <div class="border rounded-circle ml-2"
+                                style="width: 50px; height: 50px; background-image: url('img/tour.jpg'); "></div>
+                            <div class="ml-3">
+                                <div class="font-weight-bold" style="font-size: 14px;">enzopoulat</div>
+                                <div class="text-secondary">ENZO POULAT</div>
+                                <div class="text-secondary" style="font-size: 12px;">인기</div>
+                            </div>
+                            <div class=" ml-auto">
+                                <button type="button" class="btn btn-primary mr-3 btn-sm">팔로우</button>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mt-1" style="height: 65px;">
+                            <div class="border rounded-circle ml-2"
+                                style="width: 50px; height: 50px; background-image: url('img/tour.jpg'); "></div>
+                            <div class="ml-3">
+                                <div class="font-weight-bold" style="font-size: 14px;">enzopoulat</div>
+                                <div class="text-secondary">ENZO POULAT</div>
+                                <div class="text-secondary" style="font-size: 12px;">인기</div>
+                            </div>
+                            <div class=" ml-auto">
+                                <button type="button" class="btn btn-primary mr-3 btn-sm">팔로우</button>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mt-1" style="height: 65px;">
+                            <div class="border rounded-circle ml-2"
+                                style="width: 50px; height: 50px; background-image: url('img/tour.jpg'); "></div>
+                            <div class="ml-3">
+                                <div class="font-weight-bold" style="font-size: 14px;">enzopoulat</div>
+                                <div class="text-secondary">ENZO POULAT</div>
+                                <div class="text-secondary" style="font-size: 12px;">인기</div>
+                            </div>
+                            <div class=" ml-auto">
+                                <button type="button" class="btn btn-primary mr-3 btn-sm">팔로우</button>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mt-1" style="height: 65px;">
+                            <div class="border rounded-circle ml-2"
+                                style="width: 50px; height: 50px; background-image: url('img/tour.jpg'); "></div>
+                            <div class="ml-3">
+                                <div class="font-weight-bold" style="font-size: 14px;">enzopoulat</div>
+                                <div class="text-secondary">ENZO POULAT</div>
+                                <div class="text-secondary" style="font-size: 12px;">인기</div>
+                            </div>
+                            <div class=" ml-auto">
+                                <button type="button" class="btn btn-primary mr-3 btn-sm">팔로우</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- 끝 -->
+                </div>
+            </div>
+        </div>
+
+
+        <!-- The Modal -->
+        <div class="modal" id="myModal3">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content m-custom-size">
+
+                    <!-- Modal Header -->
+                    <div class="d-flex justify-content-center align-items-center border" style="height: 45px;">
+                        <div class="font-weight-bold text-center"
+                            style="width: 90%; font-size: 16px; margin-left: 20px;">팔로잉</div>
+                        <div class="close" data-dismiss="modal">
+                            <svg aria-label="닫기" class="mb-1 " fill="#262626" height="24" viewBox="0 0 48 48"
+                                width="24">
+                                <path clip-rule="evenodd"
+                                    d="M41.1 9.1l-15 15L41 39c.6.6.6 1.5 0 2.1s-1.5.6-2.1 0L24 26.1l-14.9 15c-.6.6-1.5.6-2.1 0-.6-.6-.6-1.5 0-2.1l14.9-15-15-15c-.6-.6-.6-1.5 0-2.1s1.5-.6 2.1 0l15 15 15-15c.6-.6 1.5-.6 2.1 0 .6.6.6 1.6 0 2.2z"
+                                    fill-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="d-flex align-items-center border" style="height: 40px;">
+                        <div class="flex-fill text-center font-weight-bold text-info" style="font-size: 14px;">사람</div>
+                        <div class="flex-fill text-center font-weight-bold text-muted" style="font-size: 14px;">해시태그
+                        </div>
+                    </div>
+
+                    <!-- scroll box -->
+                    <div style="height: 300px; overflow: auto;">
+
+                        <div class="d-flex align-items-center mt-1" style="height: 35px;">
+                            <div class="border rounded-circle ml-2"
+                                style="width: 35px; height: 35px; background-image: url('img/tour.jpg'); "></div>
+                            <div class="ml-3">
+                                <div class="font-weight-bold" style="font-size: 14px;">enzopoulat</div>
+                                <div class="text-secondary">ENZO POULAT</div>
+                            </div>
+                            <div class=" ml-auto">
+                                <button type="button"
+                                    class="btn btn-outline-secondary mr-4 btn-sm font-weight-bold text-dark "
+                                    disabled>팔로잉</button>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mt-1" style="height: 35px;">
+                            <div class="border rounded-circle ml-2"
+                                style="width: 35px; height: 35px; background-image: url('img/tour.jpg'); "></div>
+                            <div class="ml-3">
+                                <div class="font-weight-bold" style="font-size: 14px;">enzopoulat</div>
+                                <div class="text-secondary">ENZO POULAT</div>
+                            </div>
+                            <div class=" ml-auto">
+                                <button type="button"
+                                    class="btn btn-outline-secondary mr-4 btn-sm font-weight-bold text-dark "
+                                    disabled>팔로잉</button>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mt-1" style="height: 35px;">
+                            <div class="border rounded-circle ml-2"
+                                style="width: 35px; height: 35px; background-image: url('img/tour.jpg'); "></div>
+                            <div class="ml-3">
+                                <div class="font-weight-bold" style="font-size: 14px;">enzopoulat</div>
+                                <div class="text-secondary">ENZO POULAT</div>
+                            </div>
+                            <div class=" ml-auto">
+                                <button type="button"
+                                    class="btn btn-outline-secondary mr-4 btn-sm font-weight-bold text-dark "
+                                    disabled>팔로잉</button>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mt-1" style="height: 35px;">
+                            <div class="border rounded-circle ml-2"
+                                style="width: 35px; height: 35px; background-image: url('img/tour.jpg'); "></div>
+                            <div class="ml-3">
+                                <div class="font-weight-bold" style="font-size: 14px;">enzopoulat</div>
+                                <div class="text-secondary">ENZO POULAT</div>
+                            </div>
+                            <div class=" ml-auto">
+                                <button type="button"
+                                    class="btn btn-outline-secondary mr-4 btn-sm font-weight-bold text-dark "
+                                    disabled>팔로잉</button>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mt-1" style="height: 35px;">
+                            <div class="border rounded-circle ml-2"
+                                style="width: 35px; height: 35px; background-image: url('img/tour.jpg'); "></div>
+                            <div class="ml-3">
+                                <div class="font-weight-bold" style="font-size: 14px;">enzopoulat</div>
+                                <div class="text-secondary">ENZO POULAT</div>
+                            </div>
+                            <div class=" ml-auto">
+                                <button type="button"
+                                    class="btn btn-outline-secondary mr-4 btn-sm font-weight-bold text-dark "
+                                    disabled>팔로잉</button>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mt-1" style="height: 35px;">
+                            <div class="border rounded-circle ml-2"
+                                style="width: 35px; height: 35px; background-image: url('img/tour.jpg'); "></div>
+                            <div class="ml-3">
+                                <div class="font-weight-bold" style="font-size: 14px;">enzopoulat</div>
+                                <div class="text-secondary">ENZO POULAT</div>
+                            </div>
+                            <div class=" ml-auto">
+                                <button type="button"
+                                    class="btn btn-outline-secondary mr-4 btn-sm font-weight-bold text-dark "
+                                    disabled>팔로잉</button>
+                            </div>
+                        </div>
+
+                        <div class="pl-3 pt-2" style="height: 35px;">
+                            <h6 class="font-weight-bold">회원님을 위한 추천</h6>
+                        </div>
+
+                        <div class="text-center text-primary" style="height: 40px;">
+                            친구 추천 모두 보기
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <!-- 게시글 -->
+        <div class="modal fade " id="myModal4">
+            <div class="modal-dialog modal-lg modal-dialog-centered img-modal">
+                <div class="modal-content m-modal-content">
+
+                    <!-- Modal body -->
+
+                    <div class="d-flex justify-content-center align-content-center h-100">
+                        <div class="h-100 w-75" style=" background-image: url('img/구현불가.jpg'); background-size: 100%;">
+                        </div>
+                        <div class="text-center align-self-center font-weight-bold">이 부분은
+                            구현을
+                            하지 못하였습니다.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--footer 영역-->
+        <footer>
+            <div class="container text-center mt-5">
+                <div class="footer-1">
+                    <a href="#">소개</a>
+                    <a href="#">블로그</a>
+                    <a href="#">채용 정보</a>
+                    <a href="#">도움말</a>
+                    <a href="#">API</a>
+                    <a href="#">개인정보처리방침</a>
+                    <a href="#">약관</a>
+                    <a href="#">인기계정</a>
+                    <a href="#">해시 태그</a>
+                    <a href="#"> 위치</a>
+                </div>
+                <div class="footer-flex">
+                    <div>
+                        <select class="border border-0">
+                            <option selected>한국어</option>
+                            <option>중국어</option>
+                            <option>영어</option>
+                        </select>
+                    </div>
+                    <div>
+                        © 2020 Instagram from Facebook
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+
+    <script>
+        $('.hidden-box').on("click", function () {
+            $('#myModal4').modal('show');
+        });
+
+
+        $('.item').mouseover(function () {
+            $(this).children('div').show();
+            // $('.hidden-box').show();
+
+        });
+
+        $('.hidden-box').mouseout(function () {
+            $('.hidden-box').hide();
+
+        });
+
+
+        $(document).ready(function () {
+            $("#heart__box").hide();
+        });
+
+        $("#nav--heart").click(function () {
+            $("#heart__box").slideToggle();
+        });
+
+        $(document).ready(function () {
+            $("#nav--profile__box").hide();
+        });
+
+        $("#nav--profile").click(function () {
+            $("#nav--profile__box").slideToggle();
+        });
+
+    </script>
+
+
+</body>
+
+</html>
