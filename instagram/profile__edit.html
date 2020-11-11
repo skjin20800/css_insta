@@ -186,11 +186,12 @@
                         </div>
                     </div>
                     <div class="edit__main__info">
-                        <div class="main__info">
+                        <div class="main__info mt20">
                             <div class="main__info--fir"><img src="image/profile.jpg"></div>
                             <div class="main__info--sec">
                                 <div style="font-size: 17px; font-weight: 500;">6__jbin</div>
-                                <div style="font-size: 15px; font-weight: 900; color:#2e9efa;">프로필 사진바꾸기
+                                <div style="font-size: 15px; font-weight: 900; color:#2e9efa;">프로필
+                                    사진바꾸기
                                 </div>
                             </div>
                         </div>
@@ -203,39 +204,84 @@
                         <div class="main__info">
                             <div class="main__info--fir"></div>
                             <div class="main__info--sec">
-                                <span>사람들이 이름, 별명 또는 비즈니스 이름 .</span>
+                                <span class="g__title">사람들이 이름, 별명 또는 비즈니스 이름 등 회원님의 알려진 이름을 사용하여 회원님의 계정을 찾을 수 있도록
+                                    도와주세요.</span>
+                                <span class="g__title">이름은 14일 안에 두 번만 변경할 수 있습니다.</span>
+                            </div>
+                        </div>
+                        <div class="main__info">
+                            <div class="main__info--fir e__title">사용자이름</div>
+                            <div class="main__info--sec">
+                                <input class="main__info--input" value="6__jbin" />
                             </div>
                         </div>
                         <div class="main__info">
                             <div class="main__info--fir"><img src="image/profile.jpg"></div>
                             <div class="main__info--sec">
-                                <div style="font-size: 17px; font-weight: 500;">6__jbin</div>
-                                <div style="font-size: 15px; font-weight: 900; color:#2e9efa;">프로필 사진바꾸기
-                                </div>
+                                <span class="g__title">대부분의 경우 14일 이내에 사용자 이름을 다시 6__jbin(으)로 변경할 수 있습니다.
+                                    <span style="color: rgb(76, 132, 236); font-weight: 600;"> 더 알아보기</span></span>
                             </div>
                         </div>
                         <div class="main__info">
-                            <div class="main__info--fir"><img src="image/profile.jpg"></div>
+                            <div class="main__info--fir e__title">웹 사이트</div>
                             <div class="main__info--sec">
-                                <div style="font-size: 17px; font-weight: 500;">6__jbin</div>
-                                <div style="font-size: 15px; font-weight: 900; color:#2e9efa;">프로필 사진바꾸기
-                                </div>
+                                <input class="main__info--input" placeholder="웹 사이트" />
+                            </div>
+                        </div>
+                        <div class="main__info" style="height: 70px;">
+                            <div class="main__info--fir e__title" style="padding-bottom: 20px;">소개</div>
+                            <div class="main__info--sec" style="height: 70px;" ;>
+                                <textarea>aaasa</textarea>
+                            </div>
+                        </div>
+                        <div class="main__info" style="height: 60px;">
+                            <div class="main__info--fir"></div>
+                            <div class="main__info--sec">
+                                <span class="g__title">
+                                    <span style="font-size: 15px; font-weight: 700;"> 개인
+                                        정보</span></br>
+                                    비즈니스나 반려동물 등에 사용된 계정인 경우에도 회원님의 개인 정보를 입력하세요. 공개 프로필에는 포함되지 않습니다.
+                                </span>
                             </div>
                         </div>
                         <div class="main__info">
-                            <div class="main__info--fir"><img src="image/profile.jpg"></div>
+                            <div class="main__info--fir e__title">이메일</div>
                             <div class="main__info--sec">
-                                <div style="font-size: 17px; font-weight: 500;">6__jbin</div>
-                                <div style="font-size: 15px; font-weight: 900; color:#2e9efa;">프로필 사진바꾸기
-                                </div>
+                                <input class="main__info--input" value="skjin2xxxx@naver.com" />
                             </div>
+                        </div>
+                        <div class="main__info">
+                            <div class="main__info--fir e__title">전화번호</div>
+                            <div class="main__info--sec">
+                                <input class="main__info--input" value="010-xxxx-xxxx" />
+                            </div>
+                        </div>
+                        <div class="main__info">
+                            <div class="main__info--fir e__title">성별</div>
+                            <div class="main__info--sec">
+                                <input class="main__info--input" value="남" />
+                            </div>
+                        </div>
+                        <div class="main__info">
+                            <div class="main__info--fir e__title">비슷한 계정 추천</div>
+                            <div class="main__info--sec" style="flex-direction: row; align-items: center;">
+                                <input class="main__info--input" type="checkbox" style="width: 60px;" />
+                                <span class="e__title" style="font-size: 15px; color: black; margin-left: 5px;">팔로우할
+                                    만한 비슷한 계정을 추천할 때 회원님의
+                                    계정을
+                                    포함합니다.</span>
+                            </div>
+                        </div>
+                        <div class="main__info" style="justify-content: center; align-items: center;">
+                            <button class="btn__report">제출</button>
+                            <span
+                                style="font-size: 15px; color: rgb(0, 149, 246);margin-left: 30px; font-weight: 900;">계정을
+                                일시적으로
+                                비활성화</span>
                         </div>
                     </div>
-
                 </div>
-
-
-
+    </div>
     </div>
     </div>
     </section>
@@ -247,22 +293,10 @@
 
 
         $(document).ready(function () {
-            $("#heart__box").hide();
-        });
-
-        $("#nav--heart").click(function () {
-            $("#heart__box").slideToggle();
-        });
-
-        $(document).ready(function () {
-            $("#nav--profile__box").hide();
-        });
-
-        $("#nav--profile").click(function () {
-            $("#nav--profile__box").slideToggle();
-        });
-
-
+            $(" #heart__box").hide();
+        }); $("#nav--heart").click(function () { $("#heart__box").slideToggle(); });
+        $(document).ready(function () { $("#nav--profile__box").hide(); });
+        $("#nav--profile").click(function () { $("#nav--profile__box").slideToggle(); });
     </script>
 </body>
 
