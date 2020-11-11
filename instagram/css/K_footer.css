@@ -1,0 +1,16 @@
+.footer-1>a{
+    text-decoration: none;
+    color: black;
+    margin: 5px;
+    font-size: 12px;
+}
+
+.footer-flex{
+    display: flex;
+    justify-content: center;
+}
+
+.footer-flex>div{
+    margin: 20px 10px;
+    font-size: 12px;
+}

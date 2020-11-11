@@ -8,7 +8,7 @@
     background-color: white;
     margin: 30px auto;
     width: 800px;
-    height: 800px;
+    height: 680px;
 
 }
 
@@ -19,11 +19,11 @@
 .edit__iist__info{
     display: flex;
     justify-content: flex-start;
-    border-left: 2px solid black;
+    /* border-left: 2px solid black; */
     background-color: white;
     width: 100%;
     padding: 10px 20px;
-    font-weight: 900;
+    font-weight: 500;
     font-size: 15px;
 }
 
@@ -31,7 +31,7 @@
     border-left: 2px solid gray;
     background-color: rgb(250, 250, 250);
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 900;
     
 }
 
@@ -39,26 +39,29 @@
 .edit__main__info{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: flex-start;
+    
     border-left: 1px solid rgb(219, 219, 219);
     width: 80%;
-    padding-top: 20px;
+    
     
 }
 
 .main__info{
-    margin-top: 20px;
+    
     width: 500px;
+    height: 50px;
     display: flex;
+    
     
     
 }
 
 .main__info--fir{
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    width: 50px;
+    width: 150px;
     height: 50px;
     
 }
@@ -73,8 +76,10 @@
 
 .main__info--sec{
     display: flex;
-    
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
     width: 400px;
     height: 50px;
     padding-left: 20px;
@@ -94,3 +99,31 @@
     border-radius: 5px;
     padding-left: 10px;
 }
+
+.g__title{
+    font-size: 12px;
+    font-weight: 500;
+    color: gray;
+}
+
+textarea{
+width: 100%;
+height: 60px;
+}
+
+input[type=checkbox] {
+    zoom: 0.4;
+    }
+
+    .btn__report{
+        border-radius: 5px;
+        border: none;
+        background-color: rgb(0, 149, 246);
+        width: 50px;
+        height: 30px;
+        color:white
+    }
+
+    .mt20{
+        margin-top: 20px;
+    }

@@ -1,6 +1,12 @@
 @import url("jkb__header.css");
 @import url("jkb__insta__main.css");
 @import url("jkb__profile__edit.css");
+@import url("k_footer.css");
+@import url("K_main.css");
+@import url("login.css");
+@import url("footer.css");
+@import url("common.css");
+
 
 *{
     margin: 0px;

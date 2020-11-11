@@ -1,0 +1,31 @@
+footer{
+    padding: 50px 100px;
+    height: 50%;
+
+}
+
+.footer-main{
+    
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+.footer-main__ul{
+    
+    width: 70%;
+    display: flex;
+    justify-content: flex-start;
+    list-style-type: none;
+}
+
+.footer-main__ul li{
+    padding-left: 1%;
+}
+
+.a-link-footer{
+    text-decoration: none;   
+    font-size: 13px;
+    font-weight: 700;
+    color: #185C9D;
+}
