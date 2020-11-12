@@ -1,0 +1,4 @@
+@import url("common.css"); /*공통적인 css를 둔다*/
+@import url("login.css");
+/* 추가적인 페이지에 대한 css 필요*/
+@import url("footer.css");
