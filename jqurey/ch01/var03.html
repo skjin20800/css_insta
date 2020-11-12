@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="n1" />
+    <input type="text" id="n2" />
+    <button onclick="add()">더하기</button>
+    <hr/>
+    <div>
+        <span>합: </span>
+        <span id="s1"></span>
+    </div>
+
+
+
+    <script>
+        function add(){
+            var n1Dom = document.querySelector("#n1");
+            console.log(n1Dom.value);
+
+            var n2Dom = document.querySelector("#n2");
+            console.log(n2Dom.value);
+
+            var sum = Number(n1Dom.value) + Number(n2Dom.value);
+
+            var s1El = document.querySelector("#s1");
+            s1El.innerHTML = sum; //대소문자 구분!
+            // s1.innerHTML = sum;
+        }
+    </script>    
+</body>
+</html>

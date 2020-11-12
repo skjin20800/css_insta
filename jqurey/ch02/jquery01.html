@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery 예제1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방식 -->
+    <style>
+        div{
+            border: 1px solid black;
+            height: 200px;
+        }
+
+    </style>
+</head>
+
+<!-- 자바스크립트는 함수를 매개변수로 전달가능 -->
+<body>
+
+    <script>
+        //ready()함수는 그림이 다 그려지면!!
+        //ready에 인수에는 실행될 함수가 들어가야 함.
+        // var test=function(){
+        //     alert("test");
+        // }
+        //$(document).ready(test);
+        $(document).ready(function(){
+            alert("그림이 다 그려짐");
+        });
+
+
+        //선택자 .(점:class) #(샵:id) div(태그명)
+        //$(".box1").hide();// 그림이 그려지기 전에 실행되므로 안됨
+
+    </script>
+    <!-- <h1>그림 다 그려짐</h1> -->
+
+    <div class="box1"></div>
+    <div id="box2"></div>
+    <button onclick="show()">보이기</button>
+
+    <script>
+        $(".box1").hide();
+        $("#box2").hide();
+
+        function show(){
+            $("div").show();
+        }
+    </script>
+</body>
+</html>

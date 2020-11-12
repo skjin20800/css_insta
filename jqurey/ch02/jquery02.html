@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방식 -->
+    <title>Jquery 예제2</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <p>안녕!! 날 클릭해!!</p>
+
+
+    <script>
+        //click 함수에 인수에는 함수가 들어가야 함. = 리스너 , 운영체제의 콜백형태
+        $("p").click(function(){ //리스너--감시자   p태그에 직접 onclick을 하면 p가 직접 반응해서 
+            //함수를 호출하지만, 지금 방식은 이 스크립트가 감시하다가 p가 건드리는 걸 보면 반응함
+            //으로 리스너와 함수는 다르다. 제이쿼리는 주로 리스너방식으로
+            alert("클릭됨");
+        });
+
+        $("p").dblclick(function(){
+            alert("두번 클릭됨");
+        });
+
+        $("p").mouseenter(function(){
+            alert("마우스 올려짐");
+        });
+
+        
+
+
+    </script>
+</body>
+</html>

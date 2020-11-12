@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>제이쿼리 예제3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방식 -->
+</head>
+<body>
+<H1>날 사라지게 해봐요!!</H1>
+<h2>다시 불러볼께요!!</h2>
+ <script>
+     $("h1").click(function(){
+        $("h1").fadeOut(3000); ///1/1000 초
+
+     });
+
+     $("h2").click(function (){
+         $("h1").fadeIn();
+     });
+ </script>   
+</body>
+</html>
