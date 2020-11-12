@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <style>
+            .btn1{
+                background-color: #E51E56;
+                border: 0;
+                color: white;
+                cursor: pointer; /* 마우스 커서 올렸을때 효과*/
+                font-size: 15px;
+                font-weight: 700;
+                border-radius: 6px; /* 버튼 외부 곡선표현*/
+                outline: 0; /*클릭시 바깥라인 안생기게*/
+                height: 45px;
+                width: 70px;
+                box-shadow: 0 2px 2px 0 black; /* 버튼그림자 12시 3시 6시 9시방향 값 설정*/
+            }
+            .btn1:hover{ /*간단한 애니메이션 처리*/
+                background-color: red; 
+            }
+
+            .btn_google{
+                background-color: white;
+                width: 400px;
+                height: 45px;
+                font-size: 15px;
+                font-weight: 700;
+                border-radius: 6px;
+                cursor: pointer;
+            }
+
+            .btn2{
+                height: 40px;
+                width: 260px;
+                font-size: 20px;
+                border-radius: 4px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>버튼</h1>
+        <hr/>
+        <button class="btn1">검색 </button>
+        <h1>구글버튼</h1>
+        <hr/>
+        <button class="btn_google">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="10.0pt" height="10.0pt" viewBox="0 0 225.000000 225.000000" preserveAspectRatio="xMidYMid meet">
+                <g transform="translate(0.000000,225.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+                <path d="M680 1959 c-256 -159 -482 -299 -502 -312 l-38 -22 187 -142 187 -143 40 83 c57 116 178 237 293 295 114 56 209 76 337 70 141 -7 214 -33 364 -128 21 -14 28 -9 183 146 l162 162 -74 54 c-182 135 -371 205 -599 222 l-75 5 -465 -290z"/>
+                <path d="M2136 1323 c-3 -10 -59 -244 -124 -521 l-119 -503 39 38 c116 113 221 321 264 523 19 92 26 344 11 433 -8 43 -10 47 -37 47 -19 0 -31 -6 -34 -17z"/>
+                <path d="M1168 1030 l-3 -120 280 0 280 0 -275 120 c-151 66 -275 120 -277 120 -1 0 -3 -54 -5 -120z"/>
+                </g>
+                </svg> 구글계정으로 로그인</button>
+
+            <h1>인풋태그</h1>
+            <hr/>
+            <input class="btn2" type="text" placeholder="🍳 Search..."/>
+    </body>
+</html>

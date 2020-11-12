@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style> 
+    /*absolute의 부모가 relative일때 absolute의 이동은 relative를 따라간다, fixed도 따라가는듯*/
+        .box1{
+            position: relative;
+            width:300px;
+           height:300px;
+           background-color: yellow; 
+           display: inline-block;
+        }
+        /*absolute 새로운 도화지가 한장 더 생긴다. 위로 온다*/
+        .box2{
+            position: absolute;
+            top: 50px;
+            left: 50px;
+           width:200px;
+           height:200px;
+           background-color: red; 
+           display: inline-block;
+        }
+        
+    </style>
+</head>
+<body>
+    asdfasdfasdfsaaa
+<div class="box1"><div class="box2"></div></div>
+
+</body>
+</html>
+
+
