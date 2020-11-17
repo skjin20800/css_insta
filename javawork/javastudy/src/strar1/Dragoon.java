@@ -1,20 +1,23 @@
 package strar1;
 
-class Dragoon {
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-	String name;
-	int hp;
-	int attack;
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 
-	public Dragoon() {
-		// TODO Auto-generated constructor stub
+class Dragoon extends StarUnit {
+	private String name;
+	private int hp;
+	private int attack;
+	
+
+	void attack(StarUnit a, StarUnit b) {		
+		System.out.println(a.getName() + " -> " + b.getName() + "공격");
+		b.setHp(b.getHp()-a.getAttack());
+		System.out.println( b.getName() +" 체력 = " + b.getHp());	
 	}
-
-	public Dragoon(String n, int h, int a) {
-		// TODO Auto-generated constructor stub
-		name = n;
-		hp = h;
-		attack = a;
-
-	}
+	
 }

@@ -1,20 +1,21 @@
 package strar1;
 
- class Tank {
-	final String name; //메모리공간을 읽기 전용으로 변경
-	int hp;
-	int attack;
-	
-	public Tank(String n, int h, int a) {
-		name = n;
-		hp = h;
-		attack = a;
-	}
-	
-	public Tank() {
-		this.name = "asdf";
-	}
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+ class Tank extends StarUnit {
+	 private String name;
+	 private int hp;
+	 private int attack;
 	
+	 void attack(StarUnit a, StarUnit b) {		
+			System.out.println(a.getName() + " -> " + b.getName() + "공격");
+			b.setHp(b.getHp()-a.getAttack());
+			System.out.println( b.getName() +" 체력 = " + b.getHp());	
+		}
 	
 }

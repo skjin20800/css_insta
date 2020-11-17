@@ -1,13 +1,13 @@
-package strar1;
-
-public class Star2App {
-
-	public static void main(String[] args) {
-		Marine m = new Marine();
-		
-		
-		Dragoon d = new Dragoon("드라군1", 100, 20);
-	
-		
-	}
-}
+//package strar1;
+//
+//public class Star2App {
+//
+//	public static void main(String[] args) {
+//		Marine m = new Marine();
+//		
+//		
+//		Dragoon d = new Dragoon("드라군1", 100, 20);
+//	
+//		
+//	}
+//}
