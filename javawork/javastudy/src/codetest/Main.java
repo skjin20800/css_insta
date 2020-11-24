@@ -3,32 +3,20 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
+
+class bean{
+	
+}
+
 public class Main {
 	public static void main(String[] args) {
-		Scanner a1 = new Scanner(System.in);
-		int a=0, b=0, c=0;
-		a = a1.nextInt();
-	
-		
-		
-		for(int i = 0; i<=a;i++) {
-	 b+=i;
-			}
-		System.out.println(b);
-		
-		try {
-			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-			int num = Integer.parseInt(br.readLine());
-			br.close();
-			
-			
+		int x = 11;
+		if (x%2 ==0) {
+			System.out.println("Â¦¼ö");
 		}
-		catch(IOException e){
-			e.printStackTrace();
-			System.out.println(e.getMessage());
+		else {
+			System.out.println("È¦¼ö");
 		}
-			
 		
 }
 		
