@@ -14,7 +14,6 @@ public class MyServerSocket5 {
 
 	private ServerSocket serverSocket;
 	Vector<SocketThread> vc;//대기열
-//	int num = 1;
 	
 	public MyServerSocket5() {
 		try {
@@ -29,11 +28,9 @@ public class MyServerSocket5 {
 				//3. 새로운 스레드안에 socket 변수 넘기기
 				//4. 새로운 스레드 자체를 vc에 담기
 				System.out.println("요청 받음");
-//				SocketThread st = new SocketThread(socket, "ssar" + num);
 				SocketThread st = new SocketThread(socket);
 				st.start();
 				vc.add(st);
-//				num++;
 			}
 		} catch (Exception e) {
 			System.out.println("서버 연결 오류");
