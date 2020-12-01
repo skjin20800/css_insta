@@ -51,7 +51,7 @@ public class Exam05 extends JFrame {
 				t3.start();
 				t4.start();
 				t5.start();
-				panel.paintComponent(getGraphics());
+				repaint();
 			}
 		});
 		p2.add(click);
@@ -98,7 +98,7 @@ z2 = b;
 			if (a1 == 0) {
 				for (int i = 300; i > z2; i = i-20) {
 					list1.set(z1,i);
-				panel.paintComponent(getGraphics());
+					repaint();
 					try {
 						Thread.sleep(100);
 					} catch (InterruptedException e1) {
