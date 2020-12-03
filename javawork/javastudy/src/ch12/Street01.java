@@ -56,8 +56,19 @@ public class Street01 extends JFrame{
 					else if(e.getKeyCode()== KeyEvent.VK_LEFT){
 						x = x -10;
 					}
+					
+					if(e.getKeyCode()== KeyEvent.VK_UP){
+						if(x == 760) {
+							return;
+						}
+						y = y -10;
+					}
+					else if(e.getKeyCode()== KeyEvent.VK_DOWN){
+						y = y +10;
+					}
 					repaint();
 					}
+				
 			});
 		}
 		

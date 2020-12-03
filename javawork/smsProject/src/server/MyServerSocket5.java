@@ -51,8 +51,6 @@ public class MyServerSocket5 {
 			this.socket = socket;
 		}
 	
-
-
 		@Override
 		public void run() {
 			try {
@@ -78,17 +76,15 @@ public class MyServerSocket5 {
 					//변수에 ID저장
 					String tempId = gubun[1];
 					this.id = tempId;
+					for (int i = 0; i < vc.size(); i++) {
+						 writer.println("아이디를 입력하세요");
+					}
 				}
-
-				for (int i = 0; i < vc.size(); i++) {
-					 writer.println("아이디를 입력하세요");
+				else {
+					writer.println("아이디를 먼저 입력하세요!");
+					return ;
 				}
 			}
-			else {
-				writer.println("아이디를 먼저 입력하세요!");
-				return ;
-			}
-			
 				if(gubun[0].equals(Chat.ALL)) {
 					for (int i = 0; i < vc.size(); i++) {
 						if(vc.get(i).getId() != this.getId()) { //자기자신한테는 안보내기

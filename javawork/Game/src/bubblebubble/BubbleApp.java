@@ -58,6 +58,10 @@ public class BubbleApp extends JFrame implements Initable {
 					player.moveRight();
 				} else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
 					player.moveLeft();
+				} else if (e.getKeyCode() == KeyEvent.VK_UP && player.isLeft == true) {
+					player.moveUpLeft();
+				} else if (e.getKeyCode() == KeyEvent.VK_UP && player.isRight == true) {
+					player.moveUpRight();
 				} else if (e.getKeyCode() == KeyEvent.VK_UP) {
 					player.moveUp();
 				} else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
@@ -68,8 +72,12 @@ public class BubbleApp extends JFrame implements Initable {
 
 			@Override
 			public void keyReleased(KeyEvent e) {
-				player.isRight = false;
-				player.isLeft = false;				
+				if (e.getKeyCode() == KeyEvent.VK_UP)
+					player.isUp = false;
+				if (e.getKeyCode() == KeyEvent.VK_RIGHT)
+					player.isRight = false;
+				else if (e.getKeyCode() == KeyEvent.VK_LEFT)
+					player.isLeft = false;
 			}
 		});
 	}

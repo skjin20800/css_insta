@@ -12,6 +12,7 @@ public class MyClientSocket5 {
 	private BufferedReader reader;
 	private Scanner sc;
 	private PrintWriter writer;
+	
 	public MyClientSocket5() {
 		try {
 			socket = new Socket("localhost",10000);

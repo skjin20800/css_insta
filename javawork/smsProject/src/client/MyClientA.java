@@ -58,8 +58,6 @@ private Scanner sc;
 		@Override
 		public void run() {
 			try {
-				
-				
 				while(true) {
 					String a  = sc.nextLine();
 					bfwrite.write(a + "\n");
