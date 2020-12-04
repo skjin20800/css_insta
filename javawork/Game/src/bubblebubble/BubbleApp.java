@@ -23,9 +23,10 @@ public class BubbleApp extends JFrame implements Initable {
 		batch();
 		listener();
 
-		System.out.println(TAG + "이 부분 실행되나?");
-
+		
 		setVisible(true);
+		
+		
 	}
 
 	@Override
@@ -54,20 +55,24 @@ public class BubbleApp extends JFrame implements Initable {
 
 			@Override
 			public void keyPressed(KeyEvent e) {
+				if(player.moveLock == 1) {
+					return;
+				}
 				if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+					player.jumpUpDirectionStay = 1;
 					player.moveRight();
 				} else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+					player.jumpUpDirectionStay = -1;
 					player.moveLeft();
 				} else if (e.getKeyCode() == KeyEvent.VK_UP && player.isLeft == true) {
-					player.moveUpLeft();
+					player.jumpUpDirection = -1;
+					player.JumpUp();
 				} else if (e.getKeyCode() == KeyEvent.VK_UP && player.isRight == true) {
-					player.moveUpRight();
+					player.jumpUpDirection = 1;
+					player.JumpUp();
 				} else if (e.getKeyCode() == KeyEvent.VK_UP) {
-					player.moveUp();
-				} else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-					player.moveDown();
-				}
-
+					player.JumpUp();
+				} 
 			}
 
 			@Override
