@@ -1,19 +1,18 @@
 package jumpKing;
 
 import java.awt.Color;
+import java.awt.Container;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.io.File;
 
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-
-import lombok.Data;
+import javax.swing.JPanel;
+import javax.swing.JTextPane;
 
 public class JumpKingApp extends JFrame implements Initable {
 
@@ -26,91 +25,92 @@ public class JumpKingApp extends JFrame implements Initable {
 	public Princess princess; // 플레이어
 	private Thread thPixel; // 픽셀검사
 	private BgJumpKing bgPanel; // 백그라운드
-	
-	private ImageIcon[] icon = {null, new ImageIcon("images/1StageC.png"), new ImageIcon("images/2StageC.png"), new ImageIcon("images/3StageC.png")};
+
+	private ImageIcon[] icon = { null, new ImageIcon("images/1StageC.png"), new ImageIcon("images/2StageC.png"),
+			new ImageIcon("images/3StageC.png") };
 	private int imgCount = 1;
 	private Image img = icon[imgCount].getImage(); // 이미지 객체
-	
+
 	private Thread laThread;
+	
+	//프레임 관련
+	private DefalutPanel defalutPanel;
+	private JLabel laPrincess;
 	private JLabel la1Stage, la2Stage, la3Stage;
 	private boolean princessAdd = false;
-	
-	
 
 	public JumpKingApp() {
 		init(); // 생성 객체모음
+		
 		setting(); // 셋팅 모음
 		batch(); // 배치 모음
 		listener(); // 리스너 모음
-		setVisible(true);
 		
+		
+		setVisible(true);
+
 	}
 
-	class BgJumpKing extends JLabel implements Runnable{
-		
+	class BgJumpKing extends JLabel {
 
 		@Override
 		protected void paintComponent(Graphics g) {
 			super.paintComponent(g);
 			g.drawImage(img, 0, 0, this);
 //			g.drawLine(player.getPlayerX(), player.getPlayerY(),	player.getPlayerX(), player.getPlayerY()+30);
-			
+//			g.drawRect(princess.getX()+25, princess.getY()+40, 10,10);
+
 		}
-		
+
 		public BgJumpKing() {
-		new Thread(new Runnable() {
-			
-			@Override
-			public void run() {
-				while(true) {
-									
-					img = icon[imgCount].getImage();
-					repaint();
-					try {
-						Thread.sleep(100);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+			new Thread(new Runnable() {
+
+				@Override
+				public void run() {
+					while (true) {
+						img = icon[imgCount].getImage();
+						repaint();
+						try {
+							Thread.sleep(100);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 					}
 				}
-				
-				
-			}
-		}).start();
+			}).start();
 		}
 
-		@Override
-		public void run() {
-			// TODO Auto-generated method stub
-			
-		}
-		
-
-		
 	}
 
 	@Override
 	public void init() {
-		
+
 		player = new Player();
 		princess = new Princess();
 		bgPanel = new BgJumpKing();
+		defalutPanel = new DefalutPanel(jumpKingApp);
+		
+		laPrincess = new JLabel("공주");
 		la1Stage = new JLabel("----------1Stage----------");
 		la2Stage = new JLabel("----------2Stage----------");
 		la3Stage = new JLabel("----------3Stage----------");
-		thPixel = new Thread(new PixelCheck(player,jumpKingApp)); // 색깔 연산 스레드
+		thPixel = new Thread(new PixelCheck(player, jumpKingApp)); // 색깔 연산 스레드
 		thPixel.start();
-		laThread = new Thread(new LaStageChange());
+		laThread = new Thread(new StageChange());
 		laThread.start();
-		
-		 
-		
+
 	}
 
 	@Override
 	public void setting() {
 		setTitle("버블버블");
-		setSize(1080, 607);		
+		setSize(1080, 607);
+		
+		defalutPanel.setBounds(190, 300, 700, 200);
+		defalutPanel.getLaName().setText("공주");
+		defalutPanel.getJtaContent().setText("구해주셔서감사합니다");
+		
 		
 		la1Stage.setBounds(450, 80, 300, 400);
 		la1Stage.setForeground(Color.white);
@@ -122,6 +122,7 @@ public class JumpKingApp extends JFrame implements Initable {
 		la3Stage.setForeground(Color.white);
 		la3Stage.setFont(new Font("Serif", Font.BOLD, 22));
 		
+		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLayout(null);
 		setContentPane(bgPanel); // 기본 컨텐트페인 = 라벨 백그라운드
@@ -130,9 +131,10 @@ public class JumpKingApp extends JFrame implements Initable {
 	@Override
 	public void batch() {
 		add(player);
+		add(defalutPanel);
+		defalutPanel.setVisible(false);
+	
 
-		
-		
 	}
 
 	@Override
@@ -141,7 +143,7 @@ public class JumpKingApp extends JFrame implements Initable {
 
 			@Override
 			public void keyPressed(KeyEvent e) {
-				
+
 				if (player.isMoveLock() == true) { // Move락이 걸려있으면 메서드실행안됨
 					return;
 				}
@@ -149,7 +151,7 @@ public class JumpKingApp extends JFrame implements Initable {
 					player.setJumpUpDirectionStay(true); // 제자리 점프시 우측 방향 설정 (우측 이미지 때문에 사용)
 					player.moveRight();
 //					System.out.println(player.getPlayerX() +" a "+ player.getPlayerY());
-				} else if (e.getKeyCode() == KeyEvent.VK_LEFT ) { // 왼쪽이동
+				} else if (e.getKeyCode() == KeyEvent.VK_LEFT) { // 왼쪽이동
 					player.setJumpUpDirectionStay(false); // 제자리 점프시 좌측 방향 설정 (좌측 이미지 때문에 사용)
 					player.moveLeft();
 				} else if (e.getKeyCode() == KeyEvent.VK_SPACE && player.isLeft() == true) { // 좌측 위 점프
@@ -174,68 +176,70 @@ public class JumpKingApp extends JFrame implements Initable {
 			}
 		});
 	}
-		
-	
-	
-	class LaStageChange implements Runnable {
+
+	class StageChange implements Runnable {
+		int clear = 0; //공주 한번만 실행
 
 		@Override
 		public void run() {
 			boolean lacount = true;
-			while(true) {
-				if(imgCount ==1 && lacount == true) {
-					System.out.println("스테이지1");
-					try {
+			while (true) {
+				try {
+					if (imgCount == 1 && lacount == true) {
+						System.out.println("스테이지1");
 						lacount = false;
 						add(la1Stage);
 						Thread.sleep(2000);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}else if(imgCount == 2 && lacount == false) {
-					System.out.println("스테이지22");
-					try {
+					} else if (imgCount == 2 && lacount == false) {
+						System.out.println("스테이지22");
 						lacount = true;
 						add(la2Stage);
 						Thread.sleep(2000);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}else if(imgCount == 3 && lacount == true) {
-					try {
+					} else if (imgCount == 3 && lacount == true) {
 						System.out.println("스테이지3");
 						lacount = false;
 						add(la3Stage);
 						Thread.sleep(3000);
-						
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
 					}
+				} catch (Exception e) {
 				}
+				if (player.getX() < (princess.getX()+25) && (princess.getX()+25) < (player.getX() + 55)
+						&& (player.getY()-20) < (princess.getY()+50) && (princess.getY()+50) < (player.getY() + 55)&&
+						clear == 0 && imgCount==3) {
+					System.out.println("공주사마!!");
+					defalutPanel.setVisible(true);
+					clear = 1;
+				}				
 				remove(la1Stage);
 				remove(la2Stage);
 				remove(la3Stage);
 			}
 		}
-	}	
-	
-	public void creatPrincess() { //공주만들기
+	}
+
+	public void creatPrincess() { // 공주만들기
 		add(princess);
 	}
-	public void removePrincess() { //공주제거
+
+	public void removePrincess() { // 공주제거
 		remove(princess);
 	}
+
+
+	
+	
 	
 	
 	public int getImgCount() {
 		return imgCount;
 	}
+
 	public void setImgCount(int imgCount) {
 		this.imgCount = imgCount;
 	}
+	
+	
+
 	public static void main(String[] args) {
 		new JumpKingApp();
 	}

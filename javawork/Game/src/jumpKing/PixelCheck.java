@@ -51,10 +51,10 @@ public class PixelCheck implements Runnable {
 				playerY2 = player.getY() + 55; // 땅바닥 인식좌표2
 
 				playerX3 = player.getX(); // 좌측 인식좌표
-				playerY3 = player.getY() + 30; 
+				playerY3 = player.getY() + 40; 
 
 				playerX4 = player.getX() + 55; // 우측 인식좌표
-				playerY4 = player.getY() + 30;
+				playerY4 = player.getY() + 40;
 				
 				playerX5 = player.getX() + 25; // 머리 인식좌표
 				playerY5 = player.getY();
@@ -141,27 +141,29 @@ public class PixelCheck implements Runnable {
 						player.setStageCount(2); // 스테이지 카운트2 로변경
 						jumpKingApp.setImgCount(2); // 배경을 스테이지 2로 변경
 						jumpKingApp.setSize(1080, 607); // 배경 사이즈 변경
-						jumpKingApp.creatPrincess(); //공주 생성
+						
 						this.image = ImageIO.read(new File("images/2StageBW.png")); // 연산배경 2스테이지로 변경
 					} else if (player.getStageCount() == 2) { // 스테이지 카운트가 2일때 발생 위와 동일
 						player.setPlayerY(500);
 						player.setStageCount(3);
 						jumpKingApp.setImgCount(3);
+						jumpKingApp.creatPrincess(); //공주 생성
 						jumpKingApp.setSize(1080, 607);
 						this.image = ImageIO.read(new File("images/3StageBW.png"));
 					}
-				} else if (player.getY() > 540) {// 아래로 하락하면 스테이지 이전 스테이지 전환
+				} else if (player.getY() > 535) {// 아래로 하락하면 스테이지 이전 스테이지 전환
 					if (player.getStageCount() == 2) { // 스테이지카운터 2일때 발생
 						player.setPlayerY(0); // Y값 10으로 변경
 						player.setStageCount(1); // 스테이지 카운터1
 						jumpKingApp.setImgCount(1);// 배경을 스테이지 1로 바꿈
 						jumpKingApp.setSize(1080, 607); // 배경 사이즈 변경
-						jumpKingApp.removePrincess();// 공주 제거
+						
 						this.image = ImageIO.read(new File("images/1StageBW.png"));// 연산배경 스테이지1로 변경
 					} else if (player.getStageCount() == 3) {// 스테이지 카운터 3일때발생 위와 동일
 						player.setPlayerY(0);
 						player.setStageCount(2);
 						jumpKingApp.setImgCount(2);
+						jumpKingApp.removePrincess();// 공주 제거
 						jumpKingApp.setSize(1080, 607);
 						this.image = ImageIO.read(new File("images/2StageBW.png"));
 					}
