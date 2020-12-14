@@ -57,8 +57,6 @@ public class JumpKingApp extends JFrame implements Initable {
 		protected void paintComponent(Graphics g) {
 			super.paintComponent(g);
 			g.drawImage(img, 0, 0, this);
-//			g.drawLine(player.getPlayerX(), player.getPlayerY(),	player.getPlayerX(), player.getPlayerY()+30);
-//			g.drawRect(princess.getX()+25, princess.getY()+40, 10,10);
 
 		}
 

@@ -17,7 +17,7 @@ public class Player extends JLabel {
 	private ImageIcon icNuckDown; // 추락시 이미지
 	private int playerX = 500; // 캐릭터 기본 시작 X축
 	private int playerY = 400; // 캐틱터 기본 시작 Y축
-	private int start = 0;// Down과 JumpDown 중첩안되게 하는것
+	
 	private int stageCount = 1; // 몇 스테이지인지 표시
 
 	// 좌우이동 Lock
@@ -46,7 +46,8 @@ public class Player extends JLabel {
 	private int floor = 1; // 535 415, 295, 177 1층,2층,3층,4층
 
 	public boolean Gravity = true; // 중력역할
-	private boolean GravityCount = true;
+	private boolean GravityCount = true;// 넉다운 한번만 표현
+	private boolean downJpDown = false;// Down과 JumpDown 동시실행 안되게 제어
 
 	public Player() {
 		init();
@@ -54,7 +55,6 @@ public class Player extends JLabel {
 		setIcon(icPlayerRS);
 		setSize(70, 70); // 버블버블 크기
 		setLocation(playerX, playerY); // 기본 시작위치
-
 	}
 
 	void init() {
@@ -78,7 +78,6 @@ public class Player extends JLabel {
 
 		// 중력 쓰레드
 		thDown = new Thread(new DownMove());
-
 	};
 
 	public void moveRight() {
@@ -89,7 +88,6 @@ public class Player extends JLabel {
 		}
 		setIcon(icPlayerRS);
 	}
-
 	public void moveLeft() {
 		Thread leftTh = new Thread(new LeftMove()); // 왼쪽이동 스레드
 		if (isLeft == false) {
@@ -98,16 +96,13 @@ public class Player extends JLabel {
 		}
 		setIcon(icPlayerLS);
 	}
-
 	public void jumpUp() {
 		Thread thJumpUp = new Thread(new ThJumpUp());
 		if (isUp == false) {
-
 			System.out.println(TAG + "JumpUp()");
 			thJumpUp.start();
 		}
 	}
-
 	public void jumpDown() {
 		Thread thJumpDown = new Thread(new ThJumpDown());
 		if (isDown == false) {
@@ -115,7 +110,7 @@ public class Player extends JLabel {
 			thJumpDown.start();
 		}
 	}
-
+	
 	class RightMove implements Runnable { // Leftmove()랑 거의비슷
 		@Override
 		public void run() {
@@ -145,7 +140,6 @@ public class Player extends JLabel {
 		public void run() {
 			isLeft = true;
 			isRight = false;
-
 			while (isLeft == true && isMoveLockLeft() == false) {
 				try {
 					playerX = playerX - 10;
@@ -166,16 +160,14 @@ public class Player extends JLabel {
 		public void run() {
 			while (true) {
 				try {
-					if (start == 0) {// 락 안걸린상태에서만 동작
+					if (downJpDown == false) {// 
 						if (Gravity == false) {
 							isDown = false; // 다운 금지
 							isUp = false; // 업 금지
-//							isMoveDown = false; // 벽돌 위면 false
 
-							if (GravityCount == false) {
+							if (GravityCount == false) { // 이미지 착지모션 1번만실행
 								if (jumpNuckDownCount > 300) {
 									setIcon(icNuckDown);
-									
 								} else if (jumpUpDirection == 1) { // 우 점프 착지 이미지
 									setIcon(icJumpR4);
 								} else if (jumpUpDirection == -1) { // 좌 점프 착지 이미지
@@ -222,7 +214,7 @@ public class Player extends JLabel {
 			isUp = true; // 업만 가능
 			isRight = false; // 오른쪽이동 불가능
 			isLeft = false; // 왼쪽 이동 불가능
-			start = 1; // 점프,점프다운시 1 아닐시 0
+			downJpDown = true; // 점프 실행중 true 아닐시 false
 			jumpGauge = 0;
 			jumpLeft = 3;
 			jumpRight = 3;
@@ -356,7 +348,7 @@ public class Player extends JLabel {
 						}
 						jumpUpDirection = 0;// 점프방향 초기화 (점프가 끝나고 그냥 위로점프시 버그해결용)
 						moveLock = false; // 점프가 끝나면 다시 이동할수있게 Lock해제
-						start = 0; // 점프가 끝나고 다시 중력실행
+						downJpDown = false; // 점프가 끝나고 다시 중력실행
 						break;
 					}
 					Thread.sleep(5);
